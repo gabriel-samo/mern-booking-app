@@ -1,8 +1,9 @@
 import express, { Request, Response } from "express";
 import { check, validationResult } from "express-validator";
-import User from "../models/user";
-import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
+import bcrypt from "bcryptjs";
+import User from "../models/user";
+import verifyToken from "../middleware/auth";
 
 const router = express.Router();
 
@@ -52,6 +53,14 @@ router.post(
       console.log(error);
       return res.status(500).json({ message: "Somthing went wrong" });
     }
+  }
+);
+
+router.get(
+  "/validate-token",
+  verifyToken,
+  async (req: Request, res: Response): Promise<any> => {
+    return res.status(200).send({ userId: req.userId });
   }
 );
 
