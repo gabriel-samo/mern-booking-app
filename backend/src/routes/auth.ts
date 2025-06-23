@@ -60,8 +60,16 @@ router.get(
   "/validate-token",
   verifyToken,
   async (req: Request, res: Response): Promise<any> => {
-    return res.status(200).send({ userId: req.userId });
+    res.status(200).send({ userId: req.userId });
   }
 );
+
+router.post("/logout", async (req: Request, res: Response): Promise<any> => {
+  res.cookie("auth_token", "", {
+    expires: new Date(0)
+  });
+
+  res.send({ message: "Logged out successfully" });
+});
 
 export default router;
