@@ -4,7 +4,8 @@ import {
   Routes,
   Navigate
 } from "react-router-dom";
-import Layout from "./layouts/Layout";
+import MainLayout from "./layouts/MainLayout";
+import AuthLayout from "./layouts/AuthLayout";
 import Register from "./pages/Register";
 import SignIn from "./pages/SignIn";
 
@@ -15,33 +16,33 @@ function App() {
         <Route
           path="/"
           element={
-            <Layout>
+            <MainLayout>
               <p>Home Page</p>
-            </Layout>
+            </MainLayout>
           }
         />
         <Route
           path="/register"
           element={
-            <Layout>
+            <AuthLayout>
               <Register />
-            </Layout>
+            </AuthLayout>
           }
         />
         <Route
           path="/sign-in"
           element={
-            <Layout>
+            <AuthLayout>
               <SignIn />
-            </Layout>
+            </AuthLayout>
           }
         />
         <Route
           path="/search"
           element={
-            <Layout>
+            <MainLayout>
               <p>Search Page</p>
-            </Layout>
+            </MainLayout>
           }
         />
         <Route path="*" element={<Navigate to="/" />} />

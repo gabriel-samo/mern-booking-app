@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn {
+  @apply px-10 py-4 rounded-full flex items-center justify-center transition-all shadow-md;
+}
+
+.btn-primary {
+  @apply bg-dark hover:bg-[#e9e8e4] text-[#e2e0df] hover:text-[#0c0d0d];
+}
+
+.btn-secondary {
+  @apply bg-[#e9e8e4] hover:bg-[#0c0d0d] text-[#0c0d0d] hover:text-[#e2e0df];
+}
+
+.link {
+  @apply cursor-pointer font-medium text-[#0c0d0d] underline underline-offset-2 decoration-transparent hover:decoration-[#0c0d0d] transition-all;
+}
+
+.input {
+  @apply border rounded-3xl w-full py-2 px-4 font-normal transition-all outline-none outline-offset-0 focus:outline-[#ff9100];
+}
+
+.input-error {
+  @apply text-red-500 text-xs font-normal;
+}

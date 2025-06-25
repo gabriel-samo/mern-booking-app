@@ -40,47 +40,53 @@ const Register = () => {
   });
 
   return (
-    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <h2 className="text-3xl font-bold">Create an Account</h2>
+    <form className="flex flex-col gap-5 max-w-lg mx-auto" onSubmit={onSubmit}>
+      <h2 className="text-5xl font-bold text-center">Create an Account</h2>
       <div className="flex flex-col md:flex-row gap-5">
         <label className="text-gray-700 text-sm font-bold flex-1">
-          First Name
+          <span className="pl-2">First Name</span>
           <input
-            className="border rounded w-full py-1 px-2 font-normal"
+            className={`input ${
+              errors.firstName ? "border-8 border-red-500" : ""
+            }`}
             type="text"
             {...register("firstName", { required: "This field is required" })}
           />
           {errors.firstName && (
-            <span className="text-red-500">{errors.firstName.message}</span>
+            <span className="input-error">{errors.firstName.message}</span>
           )}
         </label>
         <label className="text-gray-700 text-sm font-bold flex-1">
-          Last Name
+          <span className="pl-2">Last Name</span>
           <input
-            className="border rounded w-full py-1 px-2 font-normal"
+            className={`input ${
+              errors.lastName ? "border-8 border-red-500" : ""
+            }`}
             type="text"
             {...register("lastName", { required: "This field is required" })}
           />
           {errors.lastName && (
-            <span className="text-red-500">{errors.lastName.message}</span>
+            <span className="input-error">{errors.lastName.message}</span>
           )}
         </label>
       </div>
       <label className="text-gray-700 text-sm font-bold flex-1">
-        Email
+        <span className="pl-2">Email</span>
         <input
-          className="border rounded w-full py-1 px-2 font-normal"
+          className={`input ${errors.email ? "border-8 border-red-500" : ""}`}
           type="email"
           {...register("email", { required: "This field is required" })}
         />
         {errors.email && (
-          <span className="text-red-500">{errors.email.message}</span>
+          <span className="input-error">{errors.email.message}</span>
         )}
       </label>
       <label className="text-gray-700 text-sm font-bold flex-1">
-        Password
+        <span className="pl-2">Password</span>
         <input
-          className="border rounded w-full py-1 px-2 font-normal"
+          className={`input ${
+            errors.password ? "border-8 border-red-500" : ""
+          }`}
           type="password"
           {...register("password", {
             required: "This field is required",
@@ -91,13 +97,15 @@ const Register = () => {
           })}
         />
         {errors.password && (
-          <span className="text-red-500">{errors.password.message}</span>
+          <span className="input-error">{errors.password.message}</span>
         )}
       </label>
       <label className="text-gray-700 text-sm font-bold flex-1">
-        Confirm Password
+        <span className="pl-2">Confirm Password</span>
         <input
-          className="border rounded w-full py-1 px-2 font-normal"
+          className={`input ${
+            errors.confirmPassword ? "border-8 border-red-500" : ""
+          }`}
           type="password"
           {...register("confirmPassword", {
             validate: (value) => {
@@ -110,20 +118,17 @@ const Register = () => {
           })}
         />
         {errors.confirmPassword && (
-          <span className="text-red-500">{errors.confirmPassword.message}</span>
+          <span className="input-error">{errors.confirmPassword.message}</span>
         )}
       </label>
       <span className="flex items-center justify-between">
         <span className="text-sm">
           Already Registered?{" "}
-          <Link to="/sign-in" className="hover:underline text-emerald-600">
+          <Link to="/sign-in" className="link">
             Login here
           </Link>
         </span>
-        <button
-          type="submit"
-          className="bg-emerald-600 text-white p-2 font-bold hover:bg-emerald-500 rounded text-xl"
-        >
+        <button type="submit" className="btn btn-primary">
           Create Account
         </button>
       </span>

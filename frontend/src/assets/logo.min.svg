@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1080">
+  <path vector-effect="non-scaling-stroke"
+    d="M540 188.865c-268.515 0-351.135 82.62-351.135 351.135S271.485 891.135 540 891.135 891.135 808.515 891.135 540 808.515 188.865 540 188.865z"
+    stroke-linecap="round" stroke="#ff9100" stroke-width="2" stroke-linejoin="round" fill="#ff9100" />
+  <path vector-effect="non-scaling-stroke"
+    d="M400.183 445.062a61.681 61.681 0 0144.88-44.881l213.282-53.32c45.169-11.294 86.087 29.625 74.794 74.8l-53.317 213.277c-5.526 22.1-22.784 39.358-44.878 44.878L421.661 733.14c-45.173 11.293-86.092-29.625-74.798-74.8l53.32-213.277z"
+    stroke-linecap="round" stroke="#ff9100" stroke-width="2" stroke-linejoin="round" fill="#e2e0df" />
+</svg>

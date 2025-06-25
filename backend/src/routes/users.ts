@@ -2,6 +2,7 @@ import express, { Request, Response } from "express";
 import jwt from "jsonwebtoken";
 import User from "../models/user";
 import { check, validationResult } from "express-validator";
+import config from "../config";
 
 const router = express.Router();
 
@@ -33,11 +34,9 @@ router.post(
 
       await user.save();
 
-      const token = jwt.sign(
-        { userId: user._id },
-        process.env.JWT_SECRET_KEY as string,
-        { expiresIn: "1d" }
-      );
+      const token = jwt.sign({ userId: user._id }, config.jwt.secret, {
+        expiresIn: "1d"
+      });
 
       res.cookie("auth_token", token, {
         httpOnly: true,

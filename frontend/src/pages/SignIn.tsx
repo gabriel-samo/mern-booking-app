@@ -35,23 +35,25 @@ const SignIn = () => {
     mutation.mutate(data);
   });
   return (
-    <form className="flex flex-col gap-5" onSubmit={onSubmit}>
-      <h2 className="text-3xl font-bold">Sign In</h2>
-      <label className="text-gray-700 text-sm font-bold flex-1">
-        Email
+    <form className="flex flex-col gap-5 max-w-lg mx-auto" onSubmit={onSubmit}>
+      <h2 className="text-5xl font-bold text-center">Sign In</h2>
+      <label className="text-gray-700 text-md font-bold flex-1">
+        <span className="pl-2">Email</span>
         <input
-          className="border rounded w-full py-1 px-2 font-normal"
+          className={`input ${errors.email ? "border-8 border-red-500" : ""}`}
           type="email"
           {...register("email", { required: "This field is required" })}
         />
         {errors.email && (
-          <span className="text-red-500">{errors.email.message}</span>
+          <span className="input-error">{errors.email.message}</span>
         )}
       </label>
       <label className="text-gray-700 text-sm font-bold flex-1">
-        Password
+        <span className="pl-2">Password</span>
         <input
-          className="border rounded w-full py-1 px-2 font-normal"
+          className={`input ${
+            errors.password ? "border-8 border-red-500" : ""
+          }`}
           type="password"
           {...register("password", {
             required: "This field is required",
@@ -62,20 +64,17 @@ const SignIn = () => {
           })}
         />
         {errors.password && (
-          <span className="text-red-500">{errors.password.message}</span>
+          <span className="input-error">{errors.password.message}</span>
         )}
       </label>
       <span className="flex items-center justify-between">
         <span className="text-sm">
           Not Registered?{" "}
-          <Link to="/register" className="hover:underline text-emerald-600">
+          <Link to="/register" className="link text-sm ">
             Create an account here
           </Link>
         </span>
-        <button
-          type="submit"
-          className="bg-emerald-600 text-white p-2 font-bold hover:bg-emerald-500 rounded text-xl"
-        >
+        <button type="submit" className="btn btn-primary">
           Login
         </button>
       </span>
