@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 type ToastProps = {
   message: string;
@@ -7,18 +7,22 @@ type ToastProps = {
 };
 
 const Toast = ({ message, type, onClose }: ToastProps) => {
+  const [isClosing, setIsClosing] = useState<boolean>(false);
   useEffect(() => {
     const timer = setTimeout(() => {
-      onClose();
+      setIsClosing(true);
+      setTimeout(() => onClose(), 500);
     }, 5000);
 
     return () => clearTimeout(timer);
   }, [onClose]);
 
-  const styles =
+  let styles =
     type === "SUCCESS"
-      ? "fixed top-4 right-4 z-50 p-4 rounded-md bg-green-600 text-white max-w-md"
-      : "fixed top-4 right-4 z-50 p-4 rounded-md bg-red-600 text-white max-w-md";
+      ? "fixed top-4 right-4 z-50 p-4 rounded-md shadow-xl bg-accent-secondary border-l-[5px] border-green-600 text-dark max-w-md"
+      : "fixed top-4 right-4 z-50 p-4 rounded-md shadow-xl bg-accent-secondary border-l-[5px] border-red-600 text-dark max-w-md";
+
+  styles += isClosing ? " animate-slide-out" : " animate-slide-in";
 
   return (
     <div className={styles}>

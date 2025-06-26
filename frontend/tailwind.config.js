@@ -12,8 +12,22 @@ export default {
         accent: "#ff9100",
         "accent-secondary": "#e9e8e4",
         dark: "#0C0D0D",
-        "text-secondary": "#78705B",
+        "dark-secondary": "#78705B",
         "off-white": "#E2E0DF"
+      },
+      keyframes: {
+        slideIn: {
+          "0%": { transform: "translateX(200%)" },
+          "100%": { transform: "translateX(0%)" }
+        },
+        slideOut: {
+          "0%": { transform: "translateX(0%)" },
+          "100%": { transform: "translateX(200%)" }
+        }
+      },
+      animation: {
+        "slide-in": "slideIn 0.7s cubic-bezier(0.55,0.44,0.43,1.23)",
+        "slide-out": "slideOut 0.7s cubic-bezier(0.74,-0.31,0.46,0.72)"
       }
     },
     container: {
