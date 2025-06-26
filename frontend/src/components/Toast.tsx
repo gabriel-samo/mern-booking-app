@@ -29,6 +29,7 @@ const Toast = ({ message, type, onClose }: ToastProps) => {
       <div className="flex justify-center items-center">
         <span className="text-lg font-semibold">{message}</span>
       </div>
+      <div className="absolute h-[5px] bottom-0 left-0 bg-blue-500 animate-progress w-full" />
     </div>
   );
 };

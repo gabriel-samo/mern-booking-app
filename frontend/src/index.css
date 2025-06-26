@@ -3,15 +3,23 @@
 @tailwind utilities;
 
 .btn {
-  @apply px-10 py-4 rounded-full flex items-center justify-center transition-all shadow-md;
+  @apply rounded-full flex items-center justify-center transition-all;
+}
+
+.btn-lg {
+  @apply px-10 py-4;
+}
+
+.btn-md {
+  @apply px-5 py-2;
 }
 
 .btn-primary {
-  @apply bg-dark hover:bg-[#e9e8e4] text-[#e2e0df] hover:text-[#0c0d0d];
+  @apply bg-dark hover:bg-[#e9e8e4] text-[#e2e0df] hover:text-[#0c0d0d] shadow-md;
 }
 
 .btn-secondary {
-  @apply bg-[#e9e8e4] hover:bg-[#0c0d0d] text-[#0c0d0d] hover:text-[#e2e0df];
+  @apply hover:bg-[#e9e8e4] hover:shadow-md;
 }
 
 .link {

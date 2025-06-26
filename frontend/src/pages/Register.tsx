@@ -128,7 +128,7 @@ const Register = () => {
             Login here
           </Link>
         </span>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-lg btn-primary">
           Create Account
         </button>
       </span>

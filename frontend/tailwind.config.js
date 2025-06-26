@@ -23,11 +23,18 @@ export default {
         slideOut: {
           "0%": { transform: "translateX(0%)" },
           "100%": { transform: "translateX(200%)" }
+        },
+        progress: {
+          "0%": { width: "0px" },
+          "10%": { width: "0px" },
+          "100%": { width: "100%" }
         }
       },
       animation: {
         "slide-in": "slideIn 0.7s cubic-bezier(0.55,0.44,0.43,1.23)",
-        "slide-out": "slideOut 0.7s cubic-bezier(0.74,-0.31,0.46,0.72)"
+        "slide-out": "slideOut 0.7s cubic-bezier(0.74,-0.31,0.46,0.72)",
+        progress:
+          "progress 5s linear, pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite"
       }
     },
     container: {

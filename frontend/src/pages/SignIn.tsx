@@ -75,7 +75,7 @@ const SignIn = () => {
             Create an account here
           </Link>
         </span>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" className="btn btn-lg btn-primary">
           Login
         </button>
       </span>

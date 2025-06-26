@@ -15,19 +15,19 @@ const Header = () => {
             MernVacation
           </Link>
         </span>
-        <span className="flex space-x-2">
+        <span className="flex gap-2">
           {isLoggedIn ? (
-            <div className="flex items-center space-x-4">
-              <Link className="btn btn-secondary !px-5 !py-2" to="/my-booking">
+            <div className="flex items-center gap-2">
+              <Link className="btn btn-md btn-secondary" to="/my-booking">
                 My Bookings
               </Link>
-              <Link className="btn btn-secondary !px-5 !py-2" to="/my-hotels">
+              <Link className="btn btn-md btn-secondary" to="/my-hotels">
                 My Hotels
               </Link>
               <SignOutButton />
             </div>
           ) : (
-            <Link to="/sign-in" className="btn btn-primary">
+            <Link to="/sign-in" className="btn btn-lg btn-primary">
               Sign In
             </Link>
           )}
