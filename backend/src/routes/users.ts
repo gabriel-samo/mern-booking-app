@@ -34,9 +34,13 @@ router.post(
 
       await user.save();
 
-      const token = jwt.sign({ userId: user._id }, config.jwt.secret, {
-        expiresIn: "1d"
-      });
+      const token = jwt.sign(
+        { userId: user._id },
+        config.jwt.secret as string,
+        {
+          expiresIn: "1d"
+        }
+      );
 
       res.cookie("auth_token", token, {
         httpOnly: true,
