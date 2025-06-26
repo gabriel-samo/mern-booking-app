@@ -1,12 +1,15 @@
 import express from "express";
 import cors from "cors";
 import mongoose from "mongoose";
-import config from "./config";
 import cookieParser from "cookie-parser";
+import config from "./config";
 import authRoutes from "./routes/auth";
 import userRoutes from "./routes/users";
 
-mongoose.connect(config.dbConnection);
+mongoose
+  .connect(config.dbConnection)
+  .then(() => console.log("Connected to MongoDB"))
+  .catch((error) => console.log("Error connecting to MongoDB:", error));
 
 const app = express();
 
